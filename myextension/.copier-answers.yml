@@ -1,0 +1,18 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: v4.5.2
+_src_path: https://github.com/jupyterlab/extension-template
+author_email: eshapotharaju@gmail.com
+author_name: jupytercon2025_extension_workshop
+create_claude_symlink: false
+create_gemini_symlink: false
+has_ai_rules: true
+has_binder: false
+has_settings: false
+kind: frontend-and-server
+labextension_name: myextension
+project_short_description: '"A JupyterLab extension that displays a random image and
+    caption."'
+python_name: myextension
+repository: ''
+test: true
+
