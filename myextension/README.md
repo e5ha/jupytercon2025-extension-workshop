@@ -1,11 +1,11 @@
-# myextension
+# jupytercon2025_extension_workshop
 
 [![Github Actions Status](/workflows/Build/badge.svg)](/actions/workflows/build.yml)
 
-"A JupyterLab extension that displays a random image and caption."
+A JupyterLab extension that displays a random image and caption.
 
-This extension is composed of a Python package named `myextension`
-for the server extension and a NPM package named `myextension`
+This extension is composed of a Python package named `jupytercon2025_extension_workshop`
+for the server extension and a NPM package named `jupytercon2025-extension-workshop`
 for the frontend extension.
 
 ## Requirements
@@ -17,7 +17,7 @@ for the frontend extension.
 To install the extension, execute:
 
 ```bash
-pip install myextension
+pip install jupytercon2025_extension_workshop
 ```
 
 ## Uninstall
@@ -25,7 +25,7 @@ pip install myextension
 To remove the extension, execute:
 
 ```bash
-pip uninstall myextension
+pip uninstall jupytercon2025_extension_workshop
 ```
 
 ## Troubleshoot
@@ -56,7 +56,7 @@ The `jlpm` command is JupyterLab's pinned version of
 
 ```bash
 # Clone the repo to your local environment
-# Change directory to the myextension directory
+# Change directory to the jupytercon2025_extension_workshop directory
 
 # Set up a virtual environment and install package in development mode
 python -m venv .venv
@@ -66,7 +66,7 @@ pip install --editable ".[dev,test]"
 # Link your development version of the extension with JupyterLab
 jupyter labextension develop . --overwrite
 # Server extension must be manually installed in develop mode
-jupyter server extension enable myextension
+jupyter server extension enable jupytercon2025_extension_workshop
 
 # Rebuild extension Typescript source after making changes
 # IMPORTANT: Unlike the steps above which are performed only once, do this step
@@ -95,13 +95,13 @@ jupyter lab build --minimize=False
 
 ```bash
 # Server extension must be manually disabled in develop mode
-jupyter server extension disable myextension
-pip uninstall myextension
+jupyter server extension disable jupytercon2025_extension_workshop
+pip uninstall jupytercon2025_extension_workshop
 ```
 
 In development mode, you will also need to remove the symlink created by `jupyter labextension develop`
 command. To find its location, you can run `jupyter labextension list` to figure out where the `labextensions`
-folder is located. Then you can remove the symlink named `myextension` within that folder.
+folder is located. Then you can remove the symlink named `jupytercon2025-extension-workshop` within that folder.
 
 ### Testing the extension
 
@@ -120,7 +120,7 @@ jupyter labextension develop . --overwrite
 To execute them, run:
 
 ```sh
-pytest -vv -r ap --cov myextension
+pytest -vv -r ap --cov jupytercon2025_extension_workshop
 ```
 
 #### Frontend tests
@@ -148,6 +148,11 @@ This project includes an `AGENTS.md` file with coding standards and best practic
 ### Compatible AI Tools
 
 `AGENTS.md` works with AI coding assistants that support the standard, including Cursor, GitHub Copilot, Windsurf, Aider, and others. For a current list of compatible tools, see [the AGENTS.md standard](https://agents.md).
+This project also includes symlinks for tool-specific compatibility:
+
+- `CLAUDE.md` → `AGENTS.md` (for Claude Code)
+
+- `GEMINI.md` → `AGENTS.md` (for Gemini Code Assist)
 
 Other conventions you might encounter:
 

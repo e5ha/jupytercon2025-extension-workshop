@@ -6,29 +6,24 @@ import { ServerConnection } from '@jupyterlab/services';
  * Call the server extension
  *
  * @param endPoint API REST end point for the extension
- * @param serverSettings The server settings to use for the request
  * @param init Initial values for the request
  * @returns The response body interpreted as JSON
  */
 export async function requestAPI<T>(
-  endPoint: string,
-  serverSettings: ServerConnection.ISettings,
+  endPoint = '',
   init: RequestInit = {}
 ): Promise<T> {
   // Make request to Jupyter API
+  const settings = ServerConnection.makeSettings();
   const requestUrl = URLExt.join(
-    serverSettings.baseUrl,
-    'myextension', // our server extension's API namespace
+    settings.baseUrl,
+    'jupytercon2025-extension-workshop', // our server extension's API namespace
     endPoint
   );
 
   let response: Response;
   try {
-    response = await ServerConnection.makeRequest(
-      requestUrl,
-      init,
-      serverSettings
-    );
+    response = await ServerConnection.makeRequest(requestUrl, init, settings);
   } catch (error) {
     throw new ServerConnection.NetworkError(error as any);
   }

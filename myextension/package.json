@@ -1,7 +1,7 @@
 {
-    "name": "myextension",
+    "name": "jupytercon2025-extension-workshop",
     "version": "0.1.0",
-    "description": "\"A JupyterLab extension that displays a random image and caption.\"",
+    "description": "A JupyterLab extension that displays a random image and caption.",
     "keywords": [
         "jupyter",
         "jupyterlab",
@@ -38,7 +38,7 @@
         "clean": "jlpm clean:lib",
         "clean:lib": "rimraf lib tsconfig.tsbuildinfo",
         "clean:lintcache": "rimraf .eslintcache .stylelintcache",
-        "clean:labextension": "rimraf myextension/labextension myextension/_version.py",
+        "clean:labextension": "rimraf jupytercon2025_extension_workshop/labextension jupytercon2025_extension_workshop/_version.py",
         "clean:all": "jlpm clean:lib && jlpm clean:labextension && jlpm clean:lintcache",
         "eslint": "jlpm eslint:check --fix",
         "eslint:check": "eslint . --cache --ext .ts,.tsx",
@@ -85,11 +85,8 @@
         "stylelint-config-standard": "^34.0.0",
         "stylelint-csstree-validator": "^3.0.0",
         "stylelint-prettier": "^4.0.0",
-        "typescript": "~5.5.4",
+        "typescript": "~5.8.0",
         "yjs": "^13.5.0"
-    },
-    "resolutions": {
-        "lib0": "0.2.111"
     },
     "sideEffects": [
         "style/*.css",
@@ -106,12 +103,12 @@
                     "pip"
                 ],
                 "base": {
-                    "name": "myextension"
+                    "name": "jupytercon2025_extension_workshop"
                 }
             }
         },
         "extension": true,
-        "outputDir": "myextension/labextension"
+        "outputDir": "jupytercon2025_extension_workshop/labextension"
     },
     "eslintIgnore": [
         "node_modules",
